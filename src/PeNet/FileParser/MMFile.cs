@@ -68,7 +68,7 @@ namespace PeNet.FileParser
             {
                 tmp[i] = (char)_va.ReadByte(offset + i);
             }
-return new string(tmp);
+            return tmp[..tmp.IndexOf('\0')].ToString();
         }
 
         public byte ReadByte(long offset)
